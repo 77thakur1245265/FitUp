@@ -9,7 +9,7 @@ export const authMiddleware = (req, res, next)=>{
         }
         const token = authorization.split(" ")[1]
         const compare = jwt.verify(token, process.env.JWT_SECRET)
-        console.log(compare)
+        console.log("compare>>>>.", compare)
         req.id = compare.id
         console.log("valid user , login done", req.id)
         next()
